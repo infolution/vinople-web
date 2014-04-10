@@ -1,0 +1,68 @@
+@import "_settings";
+@import "../_bower_components/foundation/scss/normalize";
+@import "../_bower_components/foundation/scss/foundation";
+/*@import "compass"; // you can aslo throw your compass import in there*/
+@import "compass/layout/sticky-footer";
+@include sticky-footer (90px);
+
+#root {
+
+}
+#container {
+  //background-color: #fff;
+  padding: 35px 0;
+}
+//.top-bar {padding-top: 7px;}
+
+//.top-bar-secion ul {padding-top: 10px;}
+//.top-bar-section ul li {font-size: 1.2em; color: #fff;}
+//.top-bar .title-area {margin-right: 20px;}
+
+.homepage {background: url("/img/winery_photo1680.jpg") no-repeat; min-height: 100%; height:100%}
+.run-box {background: #FCFCFC; opacity:0.98; margin-top: 15%; padding: 20px 0; text-align: center; }
+.tagline {margin-top: 18%;}
+.tagline h2 {color: #fff;}
+.featured-box {background: #FCFCFC; margin-bottom: 50px; margin-top: 30px; padding: 20px; opacity:0.98;}
+
+.top-bar-section .has-form {padding-top: 5px;}
+
+.post {margin: 4rem auto;
+  padding-bottom: 4rem;
+  border-bottom: #EBF2F6 1px solid;
+
+}
+//Blog styles
+.post {margin: 4rem auto;
+  padding-bottom: 4rem;
+  border-bottom: #EBF2F6 1px solid;
+}
+.post p, .post li {font-family: 'Noto Serif', serif;
+  font-size: 1.5rem;
+  line-height: 32px; color: #3A4145;}
+.post-meta {color: #9EABB3;}
+.post-header h1 {font-weight: bold; color: #3A4145;}
+.post header h1 a, .post-small header h1 a {color: #3A4145; transition: color ease 0.3s;}
+.post header h1 a:hover, .post-small header h1 a:hover {color: #57A3E8}
+
+
+
+#footer {background:#4D4744; padding: 20px 0; }
+#footer, #footer a {color: #fff;}
+#footer h4 {color: #fff;}
+address       { font-style:normal; line-height:1.35; }
+
+.zoomed {border: solid 1px #333; margin-top: 20px;}
+.bold {font-weight: bold;}
+.strike {text-decoration: line-through;}
+
+.empty {height: 100px;}
+.whitespace {height: 100px;}
+
+#explanation {background:#4D4744; color: #fff; padding: 20px 0;}
+#explanation h1 {color: #fff;}
+
+.tabs dd.active a {color: #fff;}
+
+
+
+.double {font-size: 2.4em;}

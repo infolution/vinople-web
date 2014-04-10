@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>VAT API - Account</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- build:css({app,.tmp}) /css/main.css -->
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- endbuild -->
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+</head>
+<body>
+<div id="root" class="homepage">
+    <div class="contain-to-grid">
+    <nav class="top-bar">
+        <ul class="title-area">
+            <li class="name"><a href="//"><img src="/img/vinople_logo134.png" /></a></li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul class="left">
+                <li><a href="//features/"></a></li>
+                <li><a href="//plans/"></a></li>
+                <li><a href="//blog/">Blog</a></li>
+                <li class="has-form"><a href="//signup/" class="button"></a></li>
+            </ul>
+
+            <ul class="right">
+                <li class="has-dropdown not-click"><a href="#"></a>
+                    <ul class="dropdown">
+                        <li><a href="/en/account/index.html">English</a></li>
+                        <li><a href="/hr/account/index.html">Croatian</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </nav>
+</div>
+
+    <div id="container">
+
+
+        <div class="row">
+<div class="large-12 column">
+    <h1 id="company"></h1>
+    <ul id="companyinfo" class="vcard">
+        <li class="street-address"></li>
+        <li class="locality"></li>
+        <li><span class="state"></span> <span class="zip"></span></li>
+        <li><span class="country"></span></li>
+    </ul>
+</div>
+
+</div>
+<div class="row">
+    <div class="large-8 column">
+        <h3>API Key</h3>
+        <p><span id="apikey"></span></p>
+    </div>
+</div>
+    <div class="row">
+    <div class="large-4 column">
+       <a href="#" id="generateAPIKey" class="button">Generate new API Key</a>
+    </div>
+
+
+</div>
+<div class="row">
+    <div class="large-8 column">
+        <h3>User</h3>
+        <p><span id="useremail"></span></p>
+    </div>
+</div>
+<div class="row">
+    <div class="large-4 column">
+        <a href="#" id="changePassword" class="button">Change password</a>
+    </div>
+
+
+</div>
+<div class="row">
+    <div class="large-8 column">
+        <h3>Billing</h3>
+        <p></p>
+    </div>
+</div>
+<div class="row">
+    <div class="large-4 column">
+        <a href="#" id="cancelSubscription" class="button alert">Cancel subscription</a>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+    <div id="root_footer">
+
+    </div>
+
+
+</div>
+
+<div id="footer">
+    <div class="row">
+        <div class="large-7 column">
+
+
+            <ul class = "inline-list" >
+                <li class ="mailto"> </li>
+                <li > <a href = "//about/" >  </a></li >
+                <li > <a href = "//terms/" >  </a></li >
+            </ul>
+        </div>
+        <div class="large-5 column ">
+            <addressc class="right">&copy; 2014 Infolution LLC</address>
+            </div>
+
+    </div>
+</div>
+
+
+
+
+<!-- build:js(app) /js/scripts.js -->
+<script src="/_bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/_bower_components/foundation/js/foundation.min.js"></script>
+<script src="/js/sha1.js"></script>
+<script src="/js/pbkdf2.js"></script>
+<script src="/js/countries.js"></script>
+<script src="/js/main.js"></script>
+<!-- endbuild -->
+
+<script >
+    var user = "info";
+    var host = "vinople.com";
+    var link = user + "@" + host;
+
+    $( document ).ready(function() {
+        $('.mailto').append("<a hre" + "f=ma" + "ilto:" + user + "@" + host + ">" + link + "</a>");})</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-32930456-5', 'vatapi.co');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

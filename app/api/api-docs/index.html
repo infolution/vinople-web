@@ -1,0 +1,144 @@
+---
+layout: homepage
+title: VAT API - API
+---
+<div class="row">
+<div class="large-12 column">
+<dl class="tabs vertical">
+    <dd ><a href="/api/live-demo/">Live demo</a></dd>
+    <dd class="active"><a href="/api/api-docs/">API documentation</a></dd>
+    <dd><a href="/api/code-examples/">Code examples</a></dd>
+</dl>
+<div class="tabs-content vertical">
+<div class="content active" id="api-docs">
+    <h1>API documentation</h1>
+
+    <h2>Authentication</h2>
+
+    <p>You need to obtain API key in your Account settings once you register. Just use it on <strong>every
+        request</strong> as a parameter.</p>
+
+    <h2>Output</h2>
+
+    <p>Output is in JSON format. Output can be wrapped in a callback function for use with Javascript JSONP
+        request.</p>
+
+    <h2>API methods</h2>
+
+
+    <h3>Calc</h3>
+    <blockquote>GET<br/>http://api.vatapi.co/calc/?country=UK&amount=1800&callback=myfunc&apikey=0NDiXLgGllnR7ziZL9bLDfIx0f1THacm
+    </blockquote>
+    <p>Method <strong>Calc</strong> is used for calculating tax amount based on customers country. It
+        doesn't store tax amount for tax reports</p>
+    <table>
+        <col style="width:30%"/>
+        <col style="width:70%"/>
+        <thead>
+        <tr>
+            <td>query parameter</td>
+            <td>description</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>country<br/>
+                <small>required</small>
+            </td>
+            <td>Country code (ISO 3166-1 alpha-2) for customer country. API will use this country tax rate
+                to calculate tex amount
+            </td>
+        </tr>
+        <tr>
+            <td>amount<br/>
+                <small>required</small>
+            </td>
+            <td>Amount in cents, don't use decimal amount, transform it to cents or other int value.
+                Basically, you need to multiply it by 100.
+                EXAMPLE: 25.54 USD becomes 2554 cents, and you submit cents
+            </td>
+        </tr>
+        <tr>
+            <td>apikey<br/>
+                <small>required</small>
+            </td>
+            <td>Secret API key for authentication. You can obtain it in Account settings of VAT API
+                website.
+            </td>
+        </tr>
+        <tr>
+            <td>callback<br/>
+                <small>optional</small>
+            </td>
+            <td>Callback function that will wrap method result. It is used in Javascript with JSONP
+                request
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <h3>Sale</h3>
+    <blockquote>GET<br/>http://api.vatapi.co/calc/?country=UK&amount=25000&callback=myfunc&apikey=6fpYAyHO0jwNTwoSi1p1L4D8ubVpECPg&timestamp=1396855639
+    </blockquote>
+    <p>Method <strong>Sale</strong> is used for calculating tax amount based on customers country and
+        storing it for later generation of quaterly tax reports.
+        Then it is easy to file tax amounts for every country.</p>
+    <table>
+        <col style="width:30%"/>
+        <col style="width:70%"/>
+        <thead>
+        <tr>
+            <td>query parameter</td>
+            <td>description</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>country<br/>
+                <small>required</small>
+            </td>
+            <td>Country code (ISO 3166-1 alpha-2) for customer country. API will use this country tax rate
+                to calculate tex amount
+            </td>
+        </tr>
+        <tr>
+            <td>amount<br/>
+                <small>required</small>
+            </td>
+            <td>Amount in cents, don't use decimal amount, transform it to cents or other int value.
+                Basically, you need to divide it by 100.
+                EXAMPLE: 25.54 USD becomes 2554 cents, and you submit cents
+            </td>
+        </tr>
+        <tr>
+            <td>apikey<br/>
+                <small>required</small>
+            </td>
+            <td>Secret API key for authentication. You can obtain it in Account settings of VAT API
+                website.
+            </td>
+        </tr>
+        <tr>
+            <td>timestamp<br/>
+                <small>required</small>
+            </td>
+            <td>Unix timestamp value. It represents time when transaction was done.</td>
+        </tr>
+        <tr>
+            <td>callback<br/>
+                <small>optional</small>
+            </td>
+            <td>Callback function that will wrap method result. It is used in Javascript with JSONP
+                request
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</div>
+</div>
+
+</div>
+

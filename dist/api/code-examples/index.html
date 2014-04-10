@@ -1,0 +1,120 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>VAT API - API</title><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="/css/main.cb1a.css"><link rel="shortcut icon" href="/favicon.ico"></head><body><div id="root"><div class="contain-to-grid"><nav class="top-bar" data-topbar=""><ul class="title-area"><li class="name"><a href="/"><img src="/img/vatapi-logo200.926f.png"></a></li><!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone --><li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li></ul><section class="top-bar-section"><ul class="left"><li><a href="/about/">About</a></li><li><a href="/api/">API</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/blog/">Blog</a></li></ul><ul class="right"><li><a id="signupMenu" href="/signup/">Sign up</a></li><li><a id="loginMenu" href="/login/">Login</a></li></ul></section></nav></div><div id="container"><div class="row"><div class="large-12 column"><dl class="tabs vertical"><dd><a href="/api/live-demo/">Live demo</a></dd><dd><a href="/api/api-docs/">API documentation</a></dd><dd class="active"><a href="/api/code-examples/">Code examples</a></dd></dl><div class="tabs-content vertical"><div class="content active" id="code-examples"><h1>Code examples</h1><div data-magellan-expedition="fixed"><dl class="sub-nav"><dd data-magellan-arrival="javascript"><a href="#javascript">Javascript</a></dd><dd data-magellan-arrival="python"><a href="#python">Python</a></dd><dd data-magellan-arrival="ruby"><a href="#ruby">Ruby</a></dd><dd data-magellan-arrival="php"><a href="#php">PHP</a></dd><dd data-magellan-arrival="go"><a href="#go">Go</a></dd></dl></div><p><a name="javascript"></a></p><h3 data-magellan-destination="javascript">Javascript</h3><pre><code>
+var amountcents = 25.54 * 100; //Transform into cents
+var data = {country: 'UK',
+            amount: amountcents,
+            apikey: '6fpYAyHO0jwNTwoSi1p1L4D8ubVpECPg'
+};
+
+$.ajax({
+    url: 'http://api.vatapi.co/calc/',
+    data: data,
+    success: function (res) {
+        console.log('Response received. ' + res);
+        //Do something with the response
+    },
+    dataType: "jsonp",
+    jsonp: "callback"
+});
+</code></pre><p><a name="python"></a></p><h3 data-magellan-destination="python">Python</h3><pre><code class="python">
+import urllib2
+country = 'HR'
+amount = 18.54
+amountcents = int(amount * 100)
+apikey='6fpYAyHO0jwNTwoSi1p1L4D8ubVpECPg'
+response = urllib2.urlopen('http://api.vatapi.co/calc/?country=' + country + '&amount=' + str(amountcents) +'&apikey=' + apikey)
+html = response.read()
+print html
+    </code></pre><p><a name="ruby"></a></p><h3 data-magellan-destination="ruby">Ruby</h3><pre><code>
+require 'open-uri'
+require "json"
+
+country = 'HR'
+amount = 1854
+amountcents = amount * 100  #Converting from decimal to cents
+apikey='6fpYAyHO0jwNTwoSi1p1L4D8ubVpECPg'
+url = "http://api.vatapi.co/calc/?country=#{country}&amount=#{amount}&apikey=#{apikey}"
+
+# Will print response.body
+buffer = open(url, "UserAgent" => "Ruby-Wget").read
+puts buffer
+
+#Parse json
+output = JSON.parse(buffer)
+amountwithtax_cents = output["amountwithtax"]
+amountwithtax = amountwithtax_cents / 100.0   #Returning from cents to decimal
+amountwithtax = amountwithtax.to_s
+puts "\n\nAmount with tax: #{amountwithtax}"
+    </code></pre><p><a name="php"></a></p><h3 data-magellan-destination="php">PHP</h3><pre><code>
+$country    = "HR";
+$amount       = 18.54;
+$amountcents = $amount * 100;  //Converting from decimal to cents
+$apikey    = "6fpYAyHO0jwNTwoSi1p1L4D8ubVpECPg";
+$url = "http://api.vatapi.co/calc/?country=${country}&amount=${amountcents}&apikey=${apikey}";
+
+$json = file_get_contents($url);
+$obj = json_decode($json);
+
+$amountwithtax_cents = $obj->amountwithtax;
+$amountwithtax = $amountwithtax_cents / 100.0;   //Returning from cents to decimal
+echo "\n\nAmount with tax: $amountwithtax";
+echo "\n";
+    </code></pre><p><a name="go"></a></p><h3 data-magellan-destination="go">Go</h3><pre><code>
+package main
+
+import (
+    "fmt"
+    "net/http"
+    "io/ioutil"
+    "strconv"
+    "encoding/json"
+)
+
+type Response struct {
+    Country	string
+    Amountwithtax	int
+    Taxrate	int
+    Amount int
+    Tax int
+}
+func convertAmountFromCents(amountcents int) float32 {
+    var amount float32
+    amount = float32(amountcents) / 100.
+    return amount
+}
+
+func main() {
+    country := "HR"
+    amount := 18.54
+    amountcents := int(amount * 100)  //Converting from decimal to cents
+    apikey := "6fpYAyHO0jwNTwoSi1p1L4D8ubVpECPg"
+    url := "http://api.vatapi.co/calc/?country=" + country + "&amount=" + strconv.Itoa(amountcents) +"&apikey=" + apikey
+
+    res, err := http.Get(url)
+
+    if err != nil {
+        panic(err.Error())
+    }
+
+    body, err := ioutil.ReadAll(res.Body)
+
+    if err != nil {
+        panic(err.Error())
+    }
+    var data Response
+    json.Unmarshal(body, &data)
+    fmt.Printf("%v\n", data)
+    amountwithtax := convertAmountFromCents(data.Amountwithtax)
+    fmt.Printf("Amount with tax: %.2f \n", amountwithtax)
+}
+    </code></pre></div></div></div></div></div><div id="root_footer"></div></div><div id="footer"><div class="row"><div class="large-6 column"><address>&copy; 2014<br>Infolution LLC<br>340 S LEMON AVE #3965 WALNUT CA, 91789<br>United States</address></div><div class="large-6 column"><span class="mailto"></span></div></div></div><script src="/js/scripts.d2f4.js"></script><script>var user = "info";
+    var host = "vatapi.co";
+    var link = user + "@" + host;
+
+    $( document ).ready(function() {
+        $('.mailto').append("<a hre" + "f=ma" + "ilto:" + user + "@" + host + ">" + link + "</a>");})</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-32930456-5', 'vatapi.co');
+    ga('send', 'pageview');</script></body></html>

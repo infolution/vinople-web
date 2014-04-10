@@ -1,0 +1,170 @@
+---
+layout: homepage
+title: VAT API - API
+---
+<div class="row">
+    <div class="large-12 column">
+        <dl class="tabs vertical">
+            <dd><a href="/api/live-demo/">Live demo</a></dd>
+            <dd><a href="/api/api-docs/">API documentation</a></dd>
+            <dd class="active"><a href="/api/code-examples/">Code examples</a></dd>
+        </dl>
+        <div class="tabs-content vertical">
+            <div class="content active" id="code-examples">
+                <h1>Code examples</h1>
+
+
+                    <div data-magellan-expedition="fixed">
+                        <dl class="sub-nav">
+                            <dd data-magellan-arrival="javascript"><a href="#javascript">Javascript</a></dd>
+                            <dd data-magellan-arrival="python"><a href="#python">Python</a></dd>
+                            <dd data-magellan-arrival="ruby"><a href="#ruby">Ruby</a></dd>
+                            <dd data-magellan-arrival="php"><a href="#php">PHP</a></dd>
+                            <dd data-magellan-arrival="go"><a href="#go">Go</a></dd>
+                        </dl>
+                    </div>
+
+
+                    <p>
+                        <a name="javascript"></a></p>
+
+                    <h3 data-magellan-destination="javascript">Javascript</h3>
+<pre><code>
+var amountcents = 25.54 * 100; //Transform into cents
+var data = {country: 'UK',
+            amount: amountcents,
+            apikey: '6fpYAyHO0jwNTwoSi1p1L4D8ubVpECPg'
+};
+
+$.ajax({
+    url: 'http://api.vatapi.co/calc/',
+    data: data,
+    success: function (res) {
+        console.log('Response received. ' + res);
+        //Do something with the response
+    },
+    dataType: "jsonp",
+    jsonp: "callback"
+});
+</code></pre>
+
+                <p><a name="python"></a></p>
+
+                <h3 data-magellan-destination="python">Python</h3>
+    <pre><code class="python">
+import urllib2
+country = 'HR'
+amount = 18.54
+amountcents = int(amount * 100)
+apikey='6fpYAyHO0jwNTwoSi1p1L4D8ubVpECPg'
+response = urllib2.urlopen('http://api.vatapi.co/calc/?country=' + country + '&amount=' + str(amountcents) +'&apikey=' + apikey)
+html = response.read()
+print html
+    </code></pre>
+
+                <p><a name="ruby"></a>
+                </p>
+
+                <h3 data-magellan-destination="ruby">Ruby</h3>
+    <pre><code>
+require 'open-uri'
+require "json"
+
+country = 'HR'
+amount = 1854
+amountcents = amount * 100  #Converting from decimal to cents
+apikey='6fpYAyHO0jwNTwoSi1p1L4D8ubVpECPg'
+url = "http://api.vatapi.co/calc/?country=#{country}&amount=#{amount}&apikey=#{apikey}"
+
+# Will print response.body
+buffer = open(url, "UserAgent" => "Ruby-Wget").read
+puts buffer
+
+#Parse json
+output = JSON.parse(buffer)
+amountwithtax_cents = output["amountwithtax"]
+amountwithtax = amountwithtax_cents / 100.0   #Returning from cents to decimal
+amountwithtax = amountwithtax.to_s
+puts "\n\nAmount with tax: #{amountwithtax}"
+    </code></pre>
+
+
+                <p><a name="php"></a></p>
+
+                <h3 data-magellan-destination="php">PHP</h3>
+    <pre><code>
+$country    = "HR";
+$amount       = 18.54;
+$amountcents = $amount * 100;  //Converting from decimal to cents
+$apikey    = "6fpYAyHO0jwNTwoSi1p1L4D8ubVpECPg";
+$url = "http://api.vatapi.co/calc/?country=${country}&amount=${amountcents}&apikey=${apikey}";
+
+$json = file_get_contents($url);
+$obj = json_decode($json);
+
+$amountwithtax_cents = $obj->amountwithtax;
+$amountwithtax = $amountwithtax_cents / 100.0;   //Returning from cents to decimal
+echo "\n\nAmount with tax: $amountwithtax";
+echo "\n";
+    </code></pre>
+
+                <p><a name="go"></a></p>
+
+                <h3 data-magellan-destination="go">Go</h3>
+    <pre><code>
+package main
+
+import (
+    "fmt"
+    "net/http"
+    "io/ioutil"
+    "strconv"
+    "encoding/json"
+)
+
+type Response struct {
+    Country	string
+    Amountwithtax	int
+    Taxrate	int
+    Amount int
+    Tax int
+}
+func convertAmountFromCents(amountcents int) float32 {
+    var amount float32
+    amount = float32(amountcents) / 100.
+    return amount
+}
+
+func main() {
+    country := "HR"
+    amount := 18.54
+    amountcents := int(amount * 100)  //Converting from decimal to cents
+    apikey := "6fpYAyHO0jwNTwoSi1p1L4D8ubVpECPg"
+    url := "http://api.vatapi.co/calc/?country=" + country + "&amount=" + strconv.Itoa(amountcents) +"&apikey=" + apikey
+
+    res, err := http.Get(url)
+
+    if err != nil {
+        panic(err.Error())
+    }
+
+    body, err := ioutil.ReadAll(res.Body)
+
+    if err != nil {
+        panic(err.Error())
+    }
+    var data Response
+    json.Unmarshal(body, &data)
+    fmt.Printf("%v\n", data)
+    amountwithtax := convertAmountFromCents(data.Amountwithtax)
+    fmt.Printf("Amount with tax: %.2f \n", amountwithtax)
+}
+    </code></pre>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+

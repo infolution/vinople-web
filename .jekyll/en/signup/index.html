@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Signup</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- build:css({app,.tmp}) /css/main.css -->
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- endbuild -->
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+</head>
+<body>
+<div id="root">
+    <div class="contain-to-grid">
+    <nav class="top-bar">
+        <ul class="title-area">
+            <li class="name"><a href="/en/"><img src="/img/vinople_logo134.png" /></a></li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul class="left">
+                <li><a href="/en/features/">Features</a></li>
+                <li><a href="/en/plans/">Plans & pricing</a></li>
+                <li><a href="/en/blog/">Blog</a></li>
+                <li class="has-form"><a href="/en/signup/" class="button">Sign up</a></li>
+            </ul>
+
+            <ul class="right">
+                <li class="has-dropdown not-click"><a href="#">Language</a>
+                    <ul class="dropdown">
+                        <li><a href="/en/signup/">English</a></li>
+                        <li><a href="/hr/signup/">Croatian</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </nav>
+</div>
+
+    <div id="container">
+
+
+        <script type="text/javascript">
+    $(document).ready(function() {
+        ilsc_run('en');
+    });
+</script>
+<div class="row">
+    <div class="large-12 column">
+        <h1>Signup</h1>
+       
+        <form id="signup" data-abide>
+             <div class="row">
+            <div id="mainError" class="large-12 column error-panel ">
+                <ul></ul>
+            </div>
+        </div>
+            <fieldset>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="text" name="fullName" placeholder="Full name" required pattern="alpha">
+                        <small class="error">Name is required and must be a string.</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="text" name="wineryName" placeholder="Winery name" required pattern="alpha">
+                        <small class="error">Winery name is required and must be a string.</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="email" name="email" placeholder="E-mail" required>
+                        <small class="error">E-mail is required and must be written correctly.</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="password" name="password" placeholder="Password" required>
+                        <small class="error">Password is required. It must be at least 8 characters long and use small letters, big letters and numbers.</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns" id="ilsc_p">
+                        <p><a href="/en/terms/" onclick="window.open(this.href, 'Terms',
+'left=20,top=20,width=700,height=500,toolbar=1,resizable=0'); return false;">Read the terms of service</a></p>
+                        <small class="error">You must click this.</small>
+                    </div>
+                </div>
+                <div id="ilsc_hp" class="row">
+                    <div class="large-6 columns">
+                        <input type="text" name="ilsc_hp" placeholder="Who loves honey">
+                        <small class="error">This is for security and must be left blank.</small>
+                        <input type="hidden" name="language" value="en">
+                    </div>
+                </div>
+                <button id="submitBtn" type="submit">Create account</button>
+            </fieldset>
+        </form>
+       <!-- <div id="signupSuccess" class="row">
+            <div class="large-12 columns">
+                <span class="success label">Successfull signup. Welcome to Vinople.</span>
+                <h1>Next steps</h1>
+                <ol>
+                    <li>Launch Vinople application <br /><a href="/en/vinopleapp/" class="button success">Launch Vinople</a></li>
+                    <li>Login and start managing your winery better</li>
+                </ol>
+            </div>
+        </div>-->
+    </div>
+</div>
+
+    </div>
+    <div id="root_footer">
+
+    </div>
+
+
+</div>
+
+<div id="footer">
+    <div class="row">
+        <div class="large-7 column">
+
+
+            <ul class = "inline-list" >
+                <li class ="mailto"> </li>
+                <li > <a href = "/en/about/" > About us </a></li >
+                <li > <a href = "/en/terms/" > Terms of service </a></li >
+            </ul>
+        </div>
+        <div class="large-5 column ">
+            <addressc class="right">&copy; 2014 Infolution LLC</address>
+            </div>
+
+    </div>
+</div>
+
+
+
+
+<!-- build:js(app) /js/scripts.js -->
+<script src="/_bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/_bower_components/foundation/js/foundation.min.js"></script>
+<script src="/js/sha1.js"></script>
+<script src="/js/pbkdf2.js"></script>
+<script src="/js/countries.js"></script>
+<script src="/js/main.js"></script>
+<!-- endbuild -->
+
+<script >
+    var user = "info";
+    var host = "vinople.com";
+    var link = user + "@" + host;
+
+    $( document ).ready(function() {
+        $('.mailto').append("<a hre" + "f=ma" + "ilto:" + user + "@" + host + ">" + link + "</a>");})</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-32930456-5', 'vatapi.co');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

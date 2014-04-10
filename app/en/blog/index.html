@@ -1,0 +1,21 @@
+---
+layout: default
+title:  "Vinople Blog"
+path:  blog/
+lang: en
+---
+<div class="row">
+    <div class="large-12 column">
+        {% for post in site.posts %}
+        <article class="post">
+            <header>
+                <span class="post-meta">{{ post.date | date_to_string }}</span>
+
+                <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+            </header>
+            <p>{{ post.excerpt }}</p>
+
+        </article>
+        {% endfor %}
+    </div>
+</div>

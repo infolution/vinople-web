@@ -1,0 +1,26 @@
+<div class="contain-to-grid">
+    <nav class="top-bar">
+        <ul class="title-area">
+            <li class="name"><a href="/{{page.lang}}/"><img src="/img/vinople_logo134.png" /></a></li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul class="left">
+                <li><a href="/{{page.lang}}/features/">{{page.translations.[page.lang].features}}</a></li>
+                <li><a href="/{{page.lang}}/plans/">{{page.translations.[page.lang].plans}}</a></li>
+                <li><a href="/{{page.lang}}/blog/">Blog</a></li>
+                <li class="has-form"><a href="/{{page.lang}}/signup/" class="button">{{page.translations.[page.lang].signup_btn}}</a></li>
+            </ul>
+
+            <ul class="right">
+                <li class="has-dropdown not-click"><a href="#">{{page.translations.[page.lang].language}}</a>
+                    <ul class="dropdown">
+                        <li><a href="/en/{{page.path}}">English</a></li>
+                        <li><a href="/hr/{{page.path}}">Croatian</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </nav>
+</div>

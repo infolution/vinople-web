@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- build:css({app,.tmp}) /css/main.css -->
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- endbuild -->
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+</head>
+<body>
+{{ content }}
+<div id="footer">
+    <div class="row">
+        <div class="large-7 column">
+
+
+            <ul class = "inline-list" >
+                <li class ="mailto"> </li>
+                <li > <a href = "/{{page.lang}}/about/" > {{page.translations.[page.lang].about}} </a></li >
+                <li > <a href = "/{{page.lang}}/terms/" > {{page.translations.[page.lang].terms}} </a></li >
+            </ul>
+        </div>
+        <div class="large-5 column ">
+            <addressc class="right">&copy; 2014 Infolution LLC</address>
+            </div>
+
+    </div>
+</div>
+
+
+
+
+<!-- build:js(app) /js/scripts.js -->
+<script src="/_bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/_bower_components/foundation/js/foundation.min.js"></script>
+<script src="/js/sha1.js"></script>
+<script src="/js/pbkdf2.js"></script>
+<script src="/js/countries.js"></script>
+<script src="/js/main.js"></script>
+<!-- endbuild -->
+
+<script >
+    var user = "info";
+    var host = "vinople.com";
+    var link = user + "@" + host;
+
+    $( document ).ready(function() {
+        $('.mailto').append("<a hre" + "f=ma" + "ilto:" + user + "@" + host + ">" + link + "</a>");})</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-32930456-5', 'vatapi.co');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

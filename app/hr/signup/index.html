@@ -1,0 +1,79 @@
+---
+layout: default
+title: Prijava
+path:	signup/
+lang: hr
+---
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        ilsc_run('hr');
+    });
+</script>
+<div class="row">
+    <div class="large-12 column">
+        <h1>Prijava</h1>
+       
+        <form id="signup" data-abide>
+             <div class="row">
+            <div id="mainError" class="large-12 column error-panel ">
+                <ul></ul>
+            </div>
+        </div>
+            <fieldset>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="text" name="fullName" placeholder="Ime i prezime" required pattern="alpha">
+                        <small class="error">Ime i prezime je obavezno unijeti</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="text" name="wineryName" placeholder="Naziv vinarije" required pattern="alpha">
+                        <small class="error">Naziv vinarije je obavezno unijeti.</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="email" name="email" placeholder="E-mail" required>
+                        <small class="error">Provjerite da li ste ispravno unijeli e-mail</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="password" name="password" placeholder="Lozinka" required>
+                        <small class="error">Lozinka je obavezna. Mora biti najmanje 8 znakova, mora sadržavati mala slova, velika slova i brojeve.</small>
+                    </div>
+                    <div class="large-6 columns">
+                        <span >Mora sadržavati: najmanje <strong>8 znakova, mala slova, velika slova i brojeve</strong>. Želimo vaše podatke očuvati sigurnim.</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns" id="ilsc_p">
+                        <p><a href="/{{page.lang}}/terms/" onclick="window.open(this.href, 'Terms',
+'left=20,top=20,width=700,height=500,toolbar=1,resizable=0'); return false;">Pročitaj uvjete korištenja</a></p>
+                        <small class="error">Ovo morate kliknuti.</small>
+                    </div>
+                </div>
+                <div id="ilsc_hp" class="row">
+                    <div class="large-6 columns">
+                        <input type="text" name="ilsc_hp" placeholder="Who loves honey">
+                        <small class="error">Ovo polje mora ostati prazno.</small>
+                        <input type="hidden" name="language" value="{{page.lang}}">
+                    </div>
+                </div>
+                <button id="submitBtn" type="submit">Kreiraj račun</button>
+            </fieldset>
+        </form>
+        <div id="signupSuccess" class="row">
+            <div class="large-12 columns">
+                <span class="success label">Uspješna prijava. Dobrodošli u Vinople.</span>
+                <h1>Sljedeći koraci</h1>
+                <ol>
+                    <li>Pokreni Vinople aplikaciju <br /><a href="/{{page.lang}}/vinopleapp/" class="button success">Pokreni Vinople</a></li>
+                    <li>Prijavi se i kreni bolje upravljati svojom vinarijom</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

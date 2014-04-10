@@ -1,0 +1,75 @@
+---
+layout: default
+title: Signup
+path:	signup/
+lang: en
+---
+<script type="text/javascript">
+    $(document).ready(function() {
+        ilsc_run('en');
+    });
+</script>
+<div class="row">
+    <div class="large-12 column">
+        <h1>Signup</h1>
+       
+        <form id="signup" data-abide>
+             <div class="row">
+            <div id="mainError" class="large-12 column error-panel ">
+                <ul></ul>
+            </div>
+        </div>
+            <fieldset>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="text" name="fullName" placeholder="Full name" required pattern="alpha">
+                        <small class="error">Name is required and must be a string.</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="text" name="wineryName" placeholder="Winery name" required pattern="alpha">
+                        <small class="error">Winery name is required and must be a string.</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="email" name="email" placeholder="E-mail" required>
+                        <small class="error">E-mail is required and must be written correctly.</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="password" name="password" placeholder="Password" required>
+                        <small class="error">Password is required. It must be at least 8 characters long and use small letters, big letters and numbers.</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns" id="ilsc_p">
+                        <p><a href="/{{page.lang}}/terms/" onclick="window.open(this.href, 'Terms',
+'left=20,top=20,width=700,height=500,toolbar=1,resizable=0'); return false;">Read the terms of service</a></p>
+                        <small class="error">You must click this.</small>
+                    </div>
+                </div>
+                <div id="ilsc_hp" class="row">
+                    <div class="large-6 columns">
+                        <input type="text" name="ilsc_hp" placeholder="Who loves honey">
+                        <small class="error">This is for security and must be left blank.</small>
+                        <input type="hidden" name="language" value="{{page.lang}}">
+                    </div>
+                </div>
+                <button id="submitBtn" type="submit">Create account</button>
+            </fieldset>
+        </form>
+       <!-- <div id="signupSuccess" class="row">
+            <div class="large-12 columns">
+                <span class="success label">Successfull signup. Welcome to Vinople.</span>
+                <h1>Next steps</h1>
+                <ol>
+                    <li>Launch Vinople application <br /><a href="/{{page.lang}}/vinopleapp/" class="button success">Launch Vinople</a></li>
+                    <li>Login and start managing your winery better</li>
+                </ol>
+            </div>
+        </div>-->
+    </div>
+</div>

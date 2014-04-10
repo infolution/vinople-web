@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Prijava</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- build:css({app,.tmp}) /css/main.css -->
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- endbuild -->
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+</head>
+<body>
+<div id="root">
+    <div class="contain-to-grid">
+    <nav class="top-bar">
+        <ul class="title-area">
+            <li class="name"><a href="/hr/"><img src="/img/vinople_logo134.png" /></a></li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul class="left">
+                <li><a href="/hr/features/">Karakteristike</a></li>
+                <li><a href="/hr/plans/">Paketi i cijene</a></li>
+                <li><a href="/hr/blog/">Blog</a></li>
+                <li class="has-form"><a href="/hr/signup/" class="button">Prijavi se</a></li>
+            </ul>
+
+            <ul class="right">
+                <li class="has-dropdown not-click"><a href="#">Jezik</a>
+                    <ul class="dropdown">
+                        <li><a href="/en/signup/">English</a></li>
+                        <li><a href="/hr/signup/">Croatian</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </nav>
+</div>
+
+    <div id="container">
+
+
+        <script type="text/javascript">
+    $(document).ready(function() {
+        ilsc_run('hr');
+    });
+</script>
+<div class="row">
+    <div class="large-12 column">
+        <h1>Prijava</h1>
+       
+        <form id="signup" data-abide>
+             <div class="row">
+            <div id="mainError" class="large-12 column error-panel ">
+                <ul></ul>
+            </div>
+        </div>
+            <fieldset>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="text" name="fullName" placeholder="Ime i prezime" required pattern="alpha">
+                        <small class="error">Ime i prezime je obavezno unijeti</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="text" name="wineryName" placeholder="Naziv vinarije" required pattern="alpha">
+                        <small class="error">Naziv vinarije je obavezno unijeti.</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="email" name="email" placeholder="E-mail" required>
+                        <small class="error">Provjerite da li ste ispravno unijeli e-mail</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <input type="password" name="password" placeholder="Lozinka" required>
+                        <small class="error">Lozinka je obavezna. Mora biti najmanje 8 znakova, mora sadržavati mala slova, velika slova i brojeve.</small>
+                    </div>
+                    <div class="large-6 columns">
+                        <span >Mora sadržavati: najmanje <strong>8 znakova, mala slova, velika slova i brojeve</strong>. Želimo vaše podatke očuvati sigurnim.</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns" id="ilsc_p">
+                        <p><a href="/hr/terms/" onclick="window.open(this.href, 'Terms',
+'left=20,top=20,width=700,height=500,toolbar=1,resizable=0'); return false;">Pročitaj uvjete korištenja</a></p>
+                        <small class="error">Ovo morate kliknuti.</small>
+                    </div>
+                </div>
+                <div id="ilsc_hp" class="row">
+                    <div class="large-6 columns">
+                        <input type="text" name="ilsc_hp" placeholder="Who loves honey">
+                        <small class="error">Ovo polje mora ostati prazno.</small>
+                        <input type="hidden" name="language" value="hr">
+                    </div>
+                </div>
+                <button id="submitBtn" type="submit">Kreiraj račun</button>
+            </fieldset>
+        </form>
+        <div id="signupSuccess" class="row">
+            <div class="large-12 columns">
+                <span class="success label">Uspješna prijava. Dobrodošli u Vinople.</span>
+                <h1>Sljedeći koraci</h1>
+                <ol>
+                    <li>Pokreni Vinople aplikaciju <br /><a href="/hr/vinopleapp/" class="button success">Pokreni Vinople</a></li>
+                    <li>Prijavi se i kreni bolje upravljati svojom vinarijom</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+    <div id="root_footer">
+
+    </div>
+
+
+</div>
+
+<div id="footer">
+    <div class="row">
+        <div class="large-7 column">
+
+
+            <ul class = "inline-list" >
+                <li class ="mailto"> </li>
+                <li > <a href = "/hr/about/" > O nama </a></li >
+                <li > <a href = "/hr/terms/" > Uvjeti korištenja </a></li >
+            </ul>
+        </div>
+        <div class="large-5 column ">
+            <addressc class="right">&copy; 2014 Infolution LLC</address>
+            </div>
+
+    </div>
+</div>
+
+
+
+
+<!-- build:js(app) /js/scripts.js -->
+<script src="/_bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/_bower_components/foundation/js/foundation.min.js"></script>
+<script src="/js/sha1.js"></script>
+<script src="/js/pbkdf2.js"></script>
+<script src="/js/countries.js"></script>
+<script src="/js/main.js"></script>
+<!-- endbuild -->
+
+<script >
+    var user = "info";
+    var host = "vinople.com";
+    var link = user + "@" + host;
+
+    $( document ).ready(function() {
+        $('.mailto').append("<a hre" + "f=ma" + "ilto:" + user + "@" + host + ">" + link + "</a>");})</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-32930456-5', 'vatapi.co');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>
